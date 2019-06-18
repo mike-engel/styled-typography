@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "module": "commonjs",
+    "jsx": "react",
+    "target": "es2016",
+    "moduleResolution": "node",
+    "lib": ["es6", "es2016", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": ["src/*"],
+  "exclude": ["test/*"]
+}
