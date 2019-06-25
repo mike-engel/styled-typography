@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import {
   getFontColor,
   TextType,
@@ -10,6 +10,17 @@ import {
   getExtras
 } from "./utils";
 import { HeadingProps, TextProps, LinkProps } from "./types";
+
+export const GlobalTypeStyles = createGlobalStyle`
+  body {
+    color: ${getFontColor(TextType.Body)};
+    font-family: ${getFontFamily(TextType.Body)};
+    font-size: ${getFontSize(TextType.Body)};
+    font-weight: ${getFontWeight(TextType.Body)};
+    font-style: ${getFontStyle(TextType.Body)};
+    line-height: ${getLineHeight(TextType.Body)};
+  }
+`;
 
 /* istanbul ignore next */
 export const Heading = styled("div").attrs<HeadingProps>(({ level }) => ({
@@ -58,3 +69,6 @@ export const Link = styled("a")<LinkProps>`
   line-height: ${getLineHeight(TextType.Link)};
   ${getExtras(TextType.Link)}
 `;
+
+export { TypographyProps, defaultTheme } from "./utils";
+export * from "./types";

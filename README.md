@@ -44,6 +44,8 @@ export const App = ({ children }) => (
 The `GlobalStyleStyles` component is a way to quickly get global type styles into your app. This is useful if you intent to use `Span` or `Link` outside of `Text`/`Heading`, or other non-`styled-typography` components in your app. It's important, however, that you place it within the `ThemeProvider` component.
 
 ```jsx
+import React from "react";
+import { ThemeProvider } from "styled-components";
 import { GlobalTypeStyles } from "styled-typography";
 
 export const App = ({ children }) => (
@@ -59,6 +61,7 @@ export const App = ({ children }) => (
 The `Text` component resolves, by default, to a `p` component within the DOM. It accepts all props passable to `p`, as well as `TextProps`.
 
 ```jsx
+import React from "react";
 import { Text, FontWeight, FontStyle } from "styled-typography";
 
 export const HelloWorld = ({ className }) => (
@@ -79,9 +82,10 @@ export const HelloWorld = ({ className }) => (
 
 The `Heading` component resolves, by default, to a `div` component within the DOM. It accepts all props passable to `div`, as well as `TextProps`.
 
-But wait, you say! That's not accessible! I know. By default, a `div` is not semantically a `h1` element. `ARIA`, however, provides attributes that _can_ make it a semantic header. Thus, the `Header` component automatically gets `role="heading" and`aria-level=#` attributes.
+But wait, you say! That's not accessible! I know. By default, a `div` is not semantically an `h1` element. `ARIA`, however, provides attributes that _can_ make it a semantic header. Thus, the `Header` component automatically gets `role="heading" and`aria-level="#"` attributes.
 
 ```jsx
+import React from "react";
 import { Heading, FontWeight, FontStyle } from "styled-typography";
 
 export const HelloWorld = ({ className }) => (
@@ -104,6 +108,7 @@ export const HelloWorld = ({ className }) => (
 The `Span` component resolves, by default, to a `span` component within the DOM. It accepts all props passable to `span`, as well as `TextProps`.
 
 ```jsx
+import React from "react";
 import { Span, FontWeight, FontStyle } from "styled-typography";
 
 export const HelloWorld = ({ className }) => (
@@ -125,6 +130,7 @@ export const HelloWorld = ({ className }) => (
 The `Link` component resolves, by default, to an `a` component within the DOM. It accepts all props passable to `a`, as well as `TextProps`.
 
 ```jsx
+import React from "react";
 import { Link, FontWeight, FontStyle } from "styled-typography";
 
 export const HelloWorld = ({ className }) => (
@@ -316,7 +322,7 @@ Please use whichever you prefer! I personally prefer the API and components used
 
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-Issues and pull requests are welcome, but because this is an interview test project, I may not respond and/or merge PRs.
+Issues and pull requests are welcome!
 
 ### Setup
 

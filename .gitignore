@@ -3,6 +3,7 @@ Thumbs.db
 
 *.orig
 
-node_modules/
 .nyc_output/
+.next/
+node_modules/
 dist/

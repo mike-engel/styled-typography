@@ -1,0 +1,54 @@
+{
+  "name": "styled-typography-www",
+  "private": true,
+  "version": "1.0.0-rc1",
+  "description": "Typograpy components for react and styled-components",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start",
+    "test": "echo 'make tests maybe idk'",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mike-engel/styled-typography.git"
+  },
+  "author": "Mike Engel <mike@mike-engel.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mike-engel/styled-typography/issues"
+  },
+  "homepage": "https://github.com/mike-engel/styled-typography#readme",
+  "dependencies": {
+    "@types/react-syntax-highlighter": "^10.2.1",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-syntax-highlighter": "^10.3.0",
+    "styled-components": "^4.3.1",
+    "styled-typography": "^1.0.0-rc1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@types/next": "^8.0.5",
+    "@types/react": "^16.8.20",
+    "@types/react-dom": "^16.8.4",
+    "@types/styled-components": "^4.1.16",
+    "@zeit/next-typescript": "^1.1.1",
+    "babel-plugin-jsx-control-statements": "^4.0.0",
+    "babel-plugin-styled-components": "^1.10.1",
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.2"
+  },
+  "lint-staged": {
+    "*.tsx?": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
