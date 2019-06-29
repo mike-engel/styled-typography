@@ -23,7 +23,7 @@ export const RawIndex = ({ className }: Props) => (
       managing large single page applications and design systems.
     </Text>
     <Text>
-      It's flexible to be used however you need and to be customized further, but simple enough to
+      It’s flexible to be used however you need and to be customized further, but simple enough to
       have a small API. Additionally, care has been taken to ensure accessibility when adding it to
       your apps.
     </Text>

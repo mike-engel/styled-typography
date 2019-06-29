@@ -29,6 +29,11 @@ export const RawHeader = ({ className }: Props) => (
             <Link>FAQ</Link>
           </NextLink>
         </li>
+        <li>
+          <Link href="https://github.com/mike-engel/styled-typography" target="_blank">
+            GitHub
+          </Link>
+        </li>
       </ul>
     </nav>
   </header>

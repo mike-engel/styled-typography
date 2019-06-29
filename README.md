@@ -151,7 +151,7 @@ export const HelloWorld = ({ className }) => (
 
 ### Options
 
-Each of these options has what I consider to be a sane default. You may override all of them, or choose just a few to change.
+Each of these options has what I consider to be a good default. You may override all of them, or choose just a few to change.
 
 - [fontSizes](#fontsizes)
 - [bodyFontFamily](#bodyfontfamily)
