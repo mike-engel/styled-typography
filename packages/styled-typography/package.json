@@ -1,6 +1,6 @@
 {
   "name": "styled-typography",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "description": "Typograpy components for react and styled-components",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
