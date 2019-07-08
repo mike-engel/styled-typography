@@ -1,0 +1,9 @@
+{
+	"version": 2,
+	"alias": ["styled-typography.now.sh"],
+	"builds": [
+		{ "src": "packages/dubdubdub/next.config.js", "use": "@now/next" }
+	],
+	"routes": [{ "src": "(.+)", "dest": "/packages/dubdubdub/$1" }],
+	"public": true
+}
