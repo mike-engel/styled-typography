@@ -47,11 +47,8 @@
     "@types/react": "^16.8.20",
     "@types/styled-components": "^4.1.16",
     "chai": "^4.2.0",
-    "husky": "^2.4.1",
-    "lint-staged": "^8.2.1",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1",
-    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "styled-components": "^4.3.1",
     "ts-node": "^8.3.0",
@@ -64,11 +61,5 @@
     "lines": 100,
     "functions": 100,
     "statements": 100
-  },
-  "lint-staged": {
-    "*.tsx?": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }

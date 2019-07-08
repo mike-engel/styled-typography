@@ -1,22 +1,22 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "esModuleInterop": true,
-    "inlineSources": true,
-    "jsx": "react",
-    "lib": ["es2017", "esnext.asynciterable"],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "pretty": true,
-    "removeComments": true,
-    "resolveJsonModule": true,
-    "outDir": "dist",
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strictNullChecks": true,
-    "target": "es2016"
-  }
+	"compilerOptions": {
+		"declaration": true,
+		"esModuleInterop": true,
+		"inlineSources": true,
+		"jsx": "react",
+		"lib": ["es2017", "esnext.asynciterable"],
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"pretty": true,
+		"removeComments": true,
+		"resolveJsonModule": true,
+		"outDir": "dist",
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strictNullChecks": true,
+		"target": "es2016"
+	}
 }

@@ -14,7 +14,9 @@ The minimum to get started is to have a `ThemeProvider` somewhere near the top o
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
-export const App = ({ children }) => <ThemeProvider theme={{}}>{children}</ThemeProvider>;
+export const App = ({ children }) => (
+	<ThemeProvider theme={{}}>{children}</ThemeProvider>
+);
 ```
 
 To configure the typographic setup, you can pass any and all [configuration options](#options) listed below.
@@ -25,13 +27,15 @@ import { ThemeProvider } from "styled-components";
 
 // only customizes these three options. The rest will come from the default implementation
 const typographyTheme = {
-  fontSizes: ["2.369rem", "1.777rem", "1.333rem", "1rem", "0.75rem", "10px"],
-  bodyFontFamily: "Source Code Pro, Input, monospace",
-  headingFontFamily: "SF Display, Helvetica Neue, Circular, sans-serif"
+	fontSizes: ["2.369rem", "1.777rem", "1.333rem", "1rem", "0.75rem", "10px"],
+	bodyFontFamily: "Source Code Pro, Input, monospace",
+	headingFontFamily: "SF Display, Helvetica Neue, Circular, sans-serif"
 };
 
 export const App = ({ children }) => (
-  <ThemeProvider theme={{ typography: typographyTheme }}>{children}</ThemeProvider>
+	<ThemeProvider theme={{ typography: typographyTheme }}>
+		{children}
+	</ThemeProvider>
 );
 ```
 
@@ -49,10 +53,10 @@ import { ThemeProvider } from "styled-components";
 import { GlobalTypeStyles } from "styled-typography";
 
 export const App = ({ children }) => (
-  <ThemeProvider theme={{}}>
-    <GlobalTypeStyles />
-    {children}
-  </ThemeProvider>
+	<ThemeProvider theme={{}}>
+		<GlobalTypeStyles />
+		{children}
+	</ThemeProvider>
 );
 ```
 
@@ -65,16 +69,16 @@ import React from "react";
 import { Text, FontWeight, FontStyle } from "styled-typography";
 
 export const HelloWorld = ({ className }) => (
-  <Text
-    className={className}
-    level={4}
-    fontWeight={FontWeight.Bold}
-    fontStyle={FontStyle.Normal}
-    color="red"
-    lineHeight={1.3}
-  >
-    Hello, World!
-  </Text>
+	<Text
+		className={className}
+		level={4}
+		fontWeight={FontWeight.Bold}
+		fontStyle={FontStyle.Normal}
+		color="red"
+		lineHeight={1.3}
+	>
+		Hello, World!
+	</Text>
 );
 ```
 
@@ -89,17 +93,17 @@ import React from "react";
 import { Heading, FontWeight, FontStyle } from "styled-typography";
 
 export const HelloWorld = ({ className }) => (
-  <Heading
-    className={className}
-    level={1} // semantic level
-    displayLevel={2} // display/visual level
-    fontWeight={FontWeight.Bold}
-    fontStyle={FontStyle.Normal}
-    color="red"
-    lineHeight={1}
-  >
-    Hello, World!
-  </Heading>
+	<Heading
+		className={className}
+		level={1} // semantic level
+		displayLevel={2} // display/visual level
+		fontWeight={FontWeight.Bold}
+		fontStyle={FontStyle.Normal}
+		color="red"
+		lineHeight={1}
+	>
+		Hello, World!
+	</Heading>
 );
 ```
 
@@ -112,16 +116,16 @@ import React from "react";
 import { Span, FontWeight, FontStyle } from "styled-typography";
 
 export const HelloWorld = ({ className }) => (
-  <Span
-    className={className}
-    level={4}
-    fontWeight={FontWeight.Bold}
-    fontStyle={FontStyle.Normal}
-    color="red"
-    lineHeight={1.3}
-  >
-    Hello, World!
-  </Span>
+	<Span
+		className={className}
+		level={4}
+		fontWeight={FontWeight.Bold}
+		fontStyle={FontStyle.Normal}
+		color="red"
+		lineHeight={1.3}
+	>
+		Hello, World!
+	</Span>
 );
 ```
 
@@ -134,18 +138,18 @@ import React from "react";
 import { Link, FontWeight, FontStyle } from "styled-typography";
 
 export const HelloWorld = ({ className }) => (
-  <Link
-    className={className}
-    level={4}
-    fontWeight={FontWeight.Bold}
-    fontStyle={FontStyle.Normal}
-    color="red"
-    lineHeight={1.3}
-    href="https://reactjs.org"
-    target="_blank"
-  >
-    Hello, World!
-  </Link>
+	<Link
+		className={className}
+		level={4}
+		fontWeight={FontWeight.Bold}
+		fontStyle={FontStyle.Normal}
+		color="red"
+		lineHeight={1.3}
+		href="https://reactjs.org"
+		target="_blank"
+	>
+		Hello, World!
+	</Link>
 );
 ```
 
@@ -377,9 +381,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
 <table>
-  <tr>
-    <td align="center"><a href="https://www.mike-engel.com"><img src="https://avatars0.githubusercontent.com/u/464447?v=4" width="100px;" alt="Mike Engel"/><br /><sub><b>Mike Engel</b></sub></a><br /><a href="#question-mike-engel" title="Answering Questions">💬</a> <a href="https://github.com/mike-engel/styled-typography/commits?author=mike-engel" title="Code">💻</a> <a href="https://github.com/mike-engel/styled-typography/commits?author=mike-engel" title="Documentation">📖</a> <a href="#example-mike-engel" title="Examples">💡</a> <a href="https://github.com/mike-engel/styled-typography/commits?author=mike-engel" title="Tests">⚠️</a> <a href="#review-mike-engel" title="Reviewed Pull Requests">👀</a> <a href="#maintenance-mike-engel" title="Maintenance">🚧</a> <a href="#design-mike-engel" title="Design">🎨</a> <a href="#infra-mike-engel" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-mike-engel" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-mike-engel" title="Content">🖋</a></td>
-  </tr>
+	<tr>
+		<td align="center"><a href="https://www.mike-engel.com"><img src="https://avatars0.githubusercontent.com/u/464447?v=4" width="100px;" alt="Mike Engel"/><br /><sub><b>Mike Engel</b></sub></a><br /><a href="#question-mike-engel" title="Answering Questions">💬</a> <a href="https://github.com/mike-engel/styled-typography/commits?author=mike-engel" title="Code">💻</a> <a href="https://github.com/mike-engel/styled-typography/commits?author=mike-engel" title="Documentation">📖</a> <a href="#example-mike-engel" title="Examples">💡</a> <a href="https://github.com/mike-engel/styled-typography/commits?author=mike-engel" title="Tests">⚠️</a> <a href="#review-mike-engel" title="Reviewed Pull Requests">👀</a> <a href="#maintenance-mike-engel" title="Maintenance">🚧</a> <a href="#design-mike-engel" title="Design">🎨</a> <a href="#infra-mike-engel" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-mike-engel" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-mike-engel" title="Content">🖋</a></td>
+	</tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->

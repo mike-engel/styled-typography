@@ -12,8 +12,8 @@ import { light } from "../components/atoms/color.component";
 import { Header } from "../components/molecules/header.component";
 
 type ComponentProps = {
-  path: string;
-  pageProps: any;
+	path: string;
+	pageProps: any;
 };
 
 type Props = Stylable & AppProps & ComponentProps;
@@ -21,117 +21,126 @@ type Props = Stylable & AppProps & ComponentProps;
 const Main = styled("main")``;
 
 const GlobalStyles = createGlobalStyle`
-  body {
-    position: relative;
-    background: ${getThemeProp("background")};
-  }
+	body {
+		position: relative;
+		background: ${getThemeProp("background")};
+	}
 
-  #__next {
-    min-width: 100vw;
-    min-height: 100vh;
-  }
+	#__next {
+		min-width: 100vw;
+		min-height: 100vh;
+	}
 
-  section {
-    max-width: 40em;
-    margin-left: auto;
-    margin-right: auto;
-  }
+	section {
+		max-width: 40em;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-  code {
-    background: ${getThemeProp("highlight")};
-    padding: ${spacing(0.25)}px ${spacing(0.5)}px;
-    border-radius: ${spacing(0.5)}px;
-  }
+	code {
+		background: ${getThemeProp("highlight")};
+		padding: ${spacing(0.25)}px ${spacing(0.5)}px;
+		border-radius: ${spacing(0.5)}px;
+	}
 
-  pre {
-    padding: ${spacing(2)}px;
-    white-space: pre-wrap;
-    border-radius: ${spacing(0.5)}px;
-    font-size: 14px;
-  }
+	pre {
+		padding: ${spacing(2)}px;
+		white-space: pre-wrap;
+		border-radius: ${spacing(0.5)}px;
+		font-size: 14px;
+	}
 
-  ${Heading} + ${Heading} {
-    margin-top: ${spacing(2)}px;
-  }
+	${Heading} + ${Heading} {
+		margin-top: ${spacing(2)}px;
+	}
 
-  pre + ${Heading} {
-    margin-top: ${spacing(4)}px;
-  }
+	pre + ${Heading} {
+		margin-top: ${spacing(4)}px;
+	}
 
-  ${Heading} code,
-  pre code {
-    background: transparent;
-    padding: initial;
-    border-radius: 0;
-  }
+	${Heading} code,
+	pre code {
+		background: transparent;
+		padding: initial;
+		border-radius: 0;
+	}
 `;
 
 export class RawApp extends App<Props> {
-  static async getInitialProps({ Component, ctx }: NextAppContext) {
-    let pageProps = {};
+	static async getInitialProps({ Component, ctx }: NextAppContext) {
+		let pageProps = {};
 
-    if (Component && Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
+		if (Component && Component.getInitialProps) {
+			pageProps = await Component.getInitialProps(ctx);
+		}
 
-    return {
-      pageProps
-    };
-  }
+		return {
+			pageProps
+		};
+	}
 
-  render() {
-    const { Component, pageProps, className } = this.props;
-    const defaultDescription = "Typograpy components for react and styled-components";
-    const defaultTitle = "Styled Typography";
-    const meta = pageProps.meta || {};
+	render() {
+		const { Component, pageProps, className } = this.props;
+		const defaultDescription =
+			"Typograpy components for react and styled-components";
+		const defaultTitle = "Styled Typography";
+		const meta = pageProps.meta || {};
 
-    return (
-      <Container>
-        <Head>
-          <meta charSet="utf-8" />
-          <meta
-            name="description"
-            content={meta.description ? meta.description : defaultDescription}
-          />
-          <meta name="viewport" content="initial-scale=1.0,width=device-width,viewport-fit=cover" />
-          <meta httpEquiv="Accept-CH" content="Viewport-Width" />
-          <meta name="theme-color" content={light} />
+		return (
+			<Container>
+				<Head>
+					<meta charSet="utf-8" />
+					<meta
+						name="description"
+						content={meta.description ? meta.description : defaultDescription}
+					/>
+					<meta
+						name="viewport"
+						content="initial-scale=1.0,width=device-width,viewport-fit=cover"
+					/>
+					<meta httpEquiv="Accept-CH" content="Viewport-Width" />
+					<meta name="theme-color" content={light} />
 
-          <link rel="stylesheet" href="https://unpkg.com/a11y-css-reset@^1/combo.min.css" />
+					<link
+						rel="stylesheet"
+						href="https://unpkg.com/a11y-css-reset@^1/combo.min.css"
+					/>
 
-          <title>{meta.title ? `${meta.title} | ${defaultTitle}` : defaultTitle}</title>
-        </Head>
-        <ThemeManager>
-          <>
-            <GlobalStyles />
-            <GlobalTypeStyles />
-            <div className={className}>
-              <ErrorBoundary>
-                <Header />
-                <Main>
-                  <Component {...pageProps} />
-                </Main>
-              </ErrorBoundary>
-            </div>
-          </>
-        </ThemeManager>
-      </Container>
-    );
-  }
+					<title>
+						{meta.title ? `${meta.title} | ${defaultTitle}` : defaultTitle}
+					</title>
+				</Head>
+				<ThemeManager>
+					<>
+						<GlobalStyles />
+						<GlobalTypeStyles />
+						<div className={className}>
+							<ErrorBoundary>
+								<Header />
+								<Main>
+									<Component {...pageProps} />
+								</Main>
+							</ErrorBoundary>
+						</div>
+					</>
+				</ThemeManager>
+			</Container>
+		);
+	}
 }
 
 export default styled(RawApp)`
-  min-width: 100vw;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
+	min-width: 100vw;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
 
-  ${Main} {
-    position: relative;
-    padding: ${spacing(3)}px;
+	${Main} {
+		position: relative;
+		padding: ${spacing(3)}px;
 
-    @media (min-width: ${Breakpoints.Tablet}px) {
-      padding: ${spacing(6)}px;
-    }
-  }
+		@media (min-width: ${Breakpoints.Tablet}px) {
+			padding: ${spacing(6)}px;
+		}
+	}
 `;
