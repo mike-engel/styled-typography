@@ -2,18 +2,24 @@ import React from "react";
 import App, { Container, NextAppContext, AppProps } from "next/app";
 import styled, { createGlobalStyle } from "styled-components";
 import { GlobalTypeStyles, Heading } from "styled-typography";
+import cookie from "cookie";
 import Head from "next/head";
 import { ErrorBoundary } from "../components/organisms/error_boundary.component";
 import { Stylable } from "../types/component.types";
 import { spacing, Breakpoints } from "../utils/spacing.util";
-import { ThemeManager } from "../components/hocs/theme_manager.component";
+import {
+	ThemeManager,
+	Theme
+} from "../components/hocs/theme_manager.component";
 import { getThemeProp } from "../utils/styles.util";
 import { light } from "../components/atoms/color.component";
 import { Header } from "../components/molecules/header.component";
+import { SkipContents } from "../components/molecules/skip_contents.component";
 
 type ComponentProps = {
 	path: string;
 	pageProps: any;
+	theme?: Theme;
 };
 
 type Props = Stylable & AppProps & ComponentProps;
@@ -50,14 +56,6 @@ const GlobalStyles = createGlobalStyle`
 		font-size: 14px;
 	}
 
-	${Heading} + ${Heading} {
-		margin-top: ${spacing(2)}px;
-	}
-
-	pre + ${Heading} {
-		margin-top: ${spacing(4)}px;
-	}
-
 	${Heading} code,
 	pre code {
 		background: transparent;
@@ -69,18 +67,21 @@ const GlobalStyles = createGlobalStyle`
 export class RawApp extends App<Props> {
 	static async getInitialProps({ Component, ctx }: NextAppContext) {
 		let pageProps = {};
+		const cookies = !!ctx.req && ctx.req.headers.cookie;
+		const themeCookie = cookie.parse(cookies || "");
 
 		if (Component && Component.getInitialProps) {
 			pageProps = await Component.getInitialProps(ctx);
 		}
 
 		return {
-			pageProps
+			pageProps,
+			theme: themeCookie.theme
 		};
 	}
 
 	render() {
-		const { Component, pageProps, className } = this.props;
+		const { Component, pageProps, className, theme } = this.props;
 		const defaultDescription =
 			"Typograpy components for react and styled-components";
 		const defaultTitle = "Styled Typography";
@@ -110,14 +111,15 @@ export class RawApp extends App<Props> {
 						{meta.title ? `${meta.title} | ${defaultTitle}` : defaultTitle}
 					</title>
 				</Head>
-				<ThemeManager>
+				<ThemeManager theme={theme}>
 					<>
 						<GlobalStyles />
 						<GlobalTypeStyles />
+						<SkipContents />
 						<div className={className}>
 							<ErrorBoundary>
 								<Header />
-								<Main>
+								<Main id="main-content">
 									<Component {...pageProps} />
 								</Main>
 							</ErrorBoundary>
@@ -137,7 +139,7 @@ export default styled(RawApp)`
 
 	${Main} {
 		position: relative;
-		padding: ${spacing(3)}px;
+		padding: 0 ${spacing(3)}px ${spacing(3)}px ${spacing(3)}px;
 
 		@media (min-width: ${Breakpoints.Tablet}px) {
 			padding: ${spacing(6)}px;

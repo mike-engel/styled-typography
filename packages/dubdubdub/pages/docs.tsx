@@ -636,8 +636,4 @@ export const HelloWorld = ({ className }) => (
 	</section>
 );
 
-export default styled(RawIndex)`
-	${Heading} + ${Heading} {
-		margin-top: ${spacing(2)}px;
-	}
-`;
+export default styled(RawIndex)``;

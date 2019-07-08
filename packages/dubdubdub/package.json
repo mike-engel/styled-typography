@@ -23,6 +23,7 @@
   "homepage": "https://github.com/mike-engel/styled-typography#readme",
   "dependencies": {
     "@types/react-syntax-highlighter": "^10.2.1",
+    "cookie": "^0.4.0",
     "next": "^8.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "@types/cookie": "^0.3.3",
     "@types/next": "^8.0.5",
     "@types/react": "^16.8.20",
     "@types/react-dom": "^16.8.4",

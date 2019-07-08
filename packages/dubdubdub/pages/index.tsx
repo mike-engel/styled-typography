@@ -29,7 +29,9 @@ export const RawIndex = ({ className }: Props) => (
 			but simple enough to have a small API. Additionally, care has been taken
 			to ensure accessibility when adding it to your apps.
 		</Text>
-		<Heading level={3}>Getting started</Heading>
+		<Heading level={3} displayLevel={2}>
+			Getting started
+		</Heading>
 		<Code>
 			{`import React from "react";
 import { ThemeProvider } from "styled-components";
@@ -61,12 +63,4 @@ export const App = ({ children }) => (
 
 export default styled(RawIndex)`
 	margin-top: ${spacing(10)}px;
-
-	${Heading} + ${Heading} {
-		margin-top: ${spacing(1)}px;
-	}
-
-	${Heading} + ${Text} {
-		margin-top: ${spacing(5)}px;
-	}
 `;

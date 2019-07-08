@@ -46,8 +46,4 @@ export const RawIndex = ({ className }: Props) => (
 	</section>
 );
 
-export default styled(RawIndex)`
-	${Heading} + ${Heading} {
-		margin-top: ${spacing(2)}px;
-	}
-`;
+export default styled(RawIndex)``;

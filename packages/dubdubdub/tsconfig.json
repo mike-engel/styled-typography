@@ -4,7 +4,13 @@
 		"esModuleInterop": true,
 		"inlineSources": true,
 		"jsx": "react",
-		"lib": ["es2017", "esnext.asynciterable"],
+		"lib": [
+			"es2017",
+			"esnext.asynciterable",
+			"dom",
+			"dom.iterable",
+			"scripthost"
+		],
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"noImplicitAny": true,
