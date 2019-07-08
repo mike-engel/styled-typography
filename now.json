@@ -4,6 +4,6 @@
 	"builds": [
 		{ "src": "packages/dubdubdub/next.config.js", "use": "@now/next" }
 	],
-	"routes": [{ "src": "(.+)", "dest": "/packages/dubdubdub/$1" }],
+	"routes": [{ "src": "/(.+)", "dest": "/packages/dubdubdub/$1" }],
 	"public": true
 }
