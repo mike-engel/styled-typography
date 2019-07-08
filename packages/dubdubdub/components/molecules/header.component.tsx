@@ -35,7 +35,7 @@ export const RawHeader = ({ className }: Props) => (
 						href="https://github.com/mike-engel/styled-typography"
 						target="_blank"
 					>
-						GitHub
+						GitHub ➚
 					</Link>
 				</li>
 			</ul>

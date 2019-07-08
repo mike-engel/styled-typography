@@ -2,20 +2,15 @@ import React, {
 	useState,
 	useContext,
 	ReactChild,
-	ChangeEvent,
 	ChangeEventHandler
 } from "react";
 import styled from "styled-components";
 import { Span } from "styled-typography";
 import { Stylable } from "../../types/component.types";
-import {
-	ThemeManagerContext,
-	Theme,
-	ThemeManagerActions
-} from "../hocs/theme_manager.component";
+import { ThemeManagerContext, Theme } from "../hocs/theme_manager.component";
 import { spacing, Breakpoints } from "../../utils/spacing.util";
 import { getThemeProp } from "../../utils/styles.util";
-import { hexToRgba, pSBC, light } from "../atoms/color.component";
+import { hexToRgba, pSBC } from "../atoms/color.component";
 
 type Props = Stylable;
 
@@ -52,10 +47,7 @@ export const RawThemeSwitcher = ({ className }: Props) => {
 	const onChange: ChangeEventHandler<HTMLInputElement> = evt => {
 		const value = (evt.currentTarget as any).value;
 
-		dispatch({
-			type: ThemeManagerActions.ChangeTheme,
-			payload: value
-		});
+		dispatch(value);
 	};
 
 	return (

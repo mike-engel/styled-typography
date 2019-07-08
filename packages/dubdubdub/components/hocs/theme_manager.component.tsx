@@ -1,4 +1,11 @@
-import React, { ReactChild, useReducer, createContext, Dispatch } from "react";
+import React, {
+	ReactChild,
+	createContext,
+	Dispatch,
+	useState,
+	SetStateAction,
+	useEffect
+} from "react";
 import { ThemeProvider } from "styled-components";
 import { TypographyProps, defaultTheme } from "styled-typography";
 import cookie from "cookie";
@@ -12,28 +19,19 @@ export enum Theme {
 	Spacey = "SPACEY"
 }
 
-export enum ThemeManagerActions {
-	ChangeTheme = "CHANGE_THEME"
-}
-
-export type Action<P> = {
-	type: ThemeManagerActions;
-	payload?: P;
-};
-
 type Props = {
 	theme?: Theme;
 	children: ReactChild;
 };
 
-type State = Record<string, any> & {
+type ThemeConfig = Record<string, any> & {
 	typography: Partial<TypographyProps>;
 };
 
 export const ThemeManagerContext = createContext<{
-	dispatch: Dispatch<Action<any>>;
+	dispatch: Dispatch<SetStateAction<Theme>>;
 	theme: Theme;
-}>({ dispatch: () => {}, theme: Theme.Light });
+}>({ dispatch: () => Theme.Light, theme: Theme.Light });
 
 export const commonTypographyConfig = {
 	extra: {
@@ -43,12 +41,11 @@ export const commonTypographyConfig = {
 	}
 };
 
-export const themes: Record<Theme, State> = {
+export const themes: Record<Theme, ThemeConfig> = {
 	[Theme.Light]: {
 		foreground: dark,
 		background: light,
 		highlight: pSBC(-0.1, light),
-		theme: Theme.Light,
 		typography: {
 			...defaultTheme,
 			...commonTypographyConfig,
@@ -60,7 +57,6 @@ export const themes: Record<Theme, State> = {
 		foreground: light,
 		background: dark,
 		highlight: pSBC(0.1, dark),
-		theme: Theme.Dark,
 		typography: {
 			...defaultTheme,
 			...commonTypographyConfig,
@@ -72,7 +68,6 @@ export const themes: Record<Theme, State> = {
 		foreground: dark,
 		background: light,
 		highlight: pSBC(-0.1, light),
-		theme: Theme.Serif,
 		typography: {
 			...defaultTheme,
 			...commonTypographyConfig,
@@ -86,7 +81,6 @@ export const themes: Record<Theme, State> = {
 		foreground: dark,
 		background: light,
 		highlight: pSBC(-0.1, light),
-		theme: Theme.GoldenRatio,
 		typography: {
 			...defaultTheme,
 			...commonTypographyConfig,
@@ -99,7 +93,6 @@ export const themes: Record<Theme, State> = {
 		foreground: dark,
 		background: light,
 		highlight: pSBC(-0.1, light),
-		theme: Theme.Spacey,
 		typography: {
 			...defaultTheme,
 			...commonTypographyConfig,
@@ -111,45 +104,20 @@ export const themes: Record<Theme, State> = {
 	}
 };
 
-export const initialState = (setTheme: Props["theme"]) => {
-	if (typeof window !== "undefined") {
-		const cookies: { theme?: Theme } = cookie.parse(document.cookie);
-
-		return themes[cookies.theme || Theme.Light];
-	}
-
-	return themes[setTheme || Theme.Light];
-};
-
-const reducer = (state: State, action: Action<Theme>) => {
-	switch (action.type) {
-		case ThemeManagerActions.ChangeTheme:
-			if (typeof window !== "undefined") {
-				const setCookie = cookie.serialize("theme", action.payload!);
-
-				document.cookie = setCookie;
-			}
-
-			return {
-				...state,
-				...themes[action.payload!],
-				typography: {
-					...state.typography,
-					...themes[action.payload!].typography
-				},
-				theme: action.payload!
-			};
-		default:
-			return state;
-	}
-};
-
 export const ThemeManager = ({ theme: cookieTheme, children }: Props) => {
-	const [state, dispatch] = useReducer(reducer, initialState(cookieTheme));
+	const [theme, setTheme] = useState(cookieTheme || Theme.Light);
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const setCookie = cookie.serialize("theme", theme);
+
+			document.cookie = setCookie;
+		}
+	}, [theme]);
 
 	return (
-		<ThemeManagerContext.Provider value={{ dispatch, theme: state.theme }}>
-			<ThemeProvider theme={state}>{children}</ThemeProvider>
+		<ThemeManagerContext.Provider value={{ dispatch: setTheme, theme }}>
+			<ThemeProvider theme={themes[theme]}>{children}</ThemeProvider>
 		</ThemeManagerContext.Provider>
 	);
 };
