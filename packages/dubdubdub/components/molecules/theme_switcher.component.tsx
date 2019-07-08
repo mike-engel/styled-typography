@@ -96,6 +96,13 @@ export const RawThemeSwitcher = ({ className }: Props) => {
 				>
 					Golden Ratio
 				</ThemeOption>
+				<ThemeOption
+					checked={theme === Theme.Spacey}
+					value={Theme.Spacey}
+					onChange={onChange}
+				>
+					Spacey
+				</ThemeOption>
 			</div>
 		</div>
 	);

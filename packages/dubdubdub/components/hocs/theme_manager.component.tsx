@@ -8,7 +8,8 @@ export enum Theme {
 	Light = "LIGHT",
 	Dark = "DARK",
 	Serif = "SERIF",
-	GoldenRatio = "GOLDEN_RATIO"
+	GoldenRatio = "GOLDEN_RATIO",
+	Spacey = "SPACEY"
 }
 
 export enum ThemeManagerActions {
@@ -90,6 +91,20 @@ export const themes: Record<Theme, State> = {
 			...defaultTheme,
 			...commonTypographyConfig,
 			fontSizes: ["4.236rem", "2.618rem", "1.618rem", "1rem", "10px", "10px"],
+			bodyColor: dark,
+			headingColor: dark
+		}
+	},
+	[Theme.Spacey]: {
+		foreground: dark,
+		background: light,
+		highlight: pSBC(-0.1, light),
+		theme: Theme.Spacey,
+		typography: {
+			...defaultTheme,
+			...commonTypographyConfig,
+			bodyLineHeight: 2.0,
+			headingLineHeight: 2.0,
 			bodyColor: dark,
 			headingColor: dark
 		}
