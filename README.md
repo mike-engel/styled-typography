@@ -2,9 +2,13 @@
 
 > Typograpy components for react and styled-components
 
+![current version](https://badgen.net/npm/v/styled-typography)
+![current version](https://badgen.net/github/license/mike-engel/styled-typography)
+![min-zip size](https://badgen.net/bundlephobia/minzip/styled-typography)
+
 `styled-typography` is a small set of components, using [`styled-components`](https://styled-components.com), to better manage typographic styles within your app. The API was born out of years of managing large single page applications and design systems. It's flexible to be used however you need and to be customized further, but simple enough to have a small API. Additionally, care has been taken to ensure accessibility when adding it to your apps.
 
-`styled-typography` aims to be as small as possible (1.4kb min + gzip), and thus has no dependencies. It requires `styled-components` v4 or above and that's it! To get started, keep reading.
+`styled-typography` aims to be as small as possible and thus has no dependencies. It requires `styled-components` v4 or above and that's it! To get started, keep reading.
 
 ## Usage
 
