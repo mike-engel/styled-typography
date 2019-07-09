@@ -2,14 +2,53 @@ import React from "react";
 import styled from "styled-components";
 import { Heading, Text, Link, FontWeight, Span } from "styled-typography";
 import { Stylable } from "../types/component.types";
-import { spacing } from "../utils/spacing.util";
+import { BookmarkHeading } from "../components/atoms/bookmark_heading.component";
 
 type Props = Stylable;
 
 export const RawIndex = ({ className }: Props) => (
 	<section className={className}>
 		<Heading>FAQ</Heading>
-		<Heading level={2}>
+		<BookmarkHeading id="why" level={2}>
+			Why?
+		</BookmarkHeading>
+		<Text>
+			That’s a good question! I wrote this for a few different reasons, any of
+			which you may not agree with. As with everything, this is opinionated!
+		</Text>
+		<ul>
+			<li>
+				Using <code>className</code> when you’re already using{" "}
+				<code>styled-components</code> feels like an anti-pattern
+			</li>
+			<li>I wanted a consistent API between all typographic elements</li>
+			<li>
+				I wanted a better API for differentiating between semantic hierarchy and
+				visual hierarchy
+			</li>
+			<li>
+				As design systems grow, so do one-off components. I needed typography
+				components I could compose as needed without creating many abstractions
+			</li>
+			<li>
+				I was inspired by{" "}
+				<Link
+					href="https://github.com/necolas/react-native-web"
+					target="_blank"
+				>
+					<code>react-native-web</code>
+				</Link>
+				, but wanted something that fit in with <code>styled-components</code>
+			</li>
+		</ul>
+		<Text>
+			Overall, yes, you could do this with <code>h#</code>, <code>p</code>,{" "}
+			<code>span</code>, and <code>a</code> tags. In the end, having a single
+			reusable API that fits in with my existing styling framework and
+			composition style made the most sense to me. And after tweaking this API
+			over several years, it still does!
+		</Text>
+		<BookmarkHeading id="how-is-this-different-from-react-typography" level={2}>
 			How is this different from{" "}
 			<Link
 				href="https://github.com/KyleAMathews/typography.js#reactjs-helper-components"
@@ -18,7 +57,7 @@ export const RawIndex = ({ className }: Props) => (
 				react-typography
 			</Link>
 			?
-		</Heading>
+		</BookmarkHeading>
 		<Text>
 			The main difference is that <code>react-typography</code>, and{" "}
 			<code>typography.js</code> both are meant to setup typographic styling at

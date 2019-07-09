@@ -6,7 +6,7 @@ import { Stylable } from "../../types/component.types";
 
 type Props = Stylable &
 	TypeProps & {
-		children: ReactChild;
+		children: ReactChild | ReactChild[];
 		id: string;
 	};
 
@@ -41,7 +41,7 @@ export const RawBookmarkHeading = ({
 export const BookmarkHeading = styled(RawBookmarkHeading)`
 	position: relative;
 
-	${Link} {
+	${Link}:first-child {
 		position: absolute;
 		top: 50%;
 		left: -44px;
@@ -51,11 +51,11 @@ export const BookmarkHeading = styled(RawBookmarkHeading)`
 	}
 
 	@media (hover) {
-		${Link} {
+		${Link}:first-child {
 			opacity: 0;
 		}
 
-		&:hover ${Link} {
+		&:hover ${Link}:first-child {
 			opacity: 1;
 		}
 	}

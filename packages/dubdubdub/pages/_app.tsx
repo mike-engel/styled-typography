@@ -56,6 +56,10 @@ const GlobalStyles = createGlobalStyle`
 		font-size: 14px;
 	}
 
+	ul {
+		padding-left: 1em;
+	}
+
 	${Heading} code,
 	pre code {
 		background: transparent;
