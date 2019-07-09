@@ -2,49 +2,59 @@ import React from "react";
 import { Heading, Link, FontWeight } from "styled-typography";
 import styled from "styled-components";
 import NextLink from "next/link";
+import { WithRouterProps, withRouter } from "next/router";
 import { Stylable } from "../../types/component.types";
 import { spacing, Breakpoints } from "../../utils/spacing.util";
 import { ThemeSwitcher } from "./theme_switcher.component";
 
-type Props = Stylable;
+type Props = Stylable & WithRouterProps;
 
-export const RawHeader = ({ className }: Props) => (
-	<header className={className}>
-		<Heading displayLevel={3} fontWeight={FontWeight.Medium}>
-			Styled Typography
-		</Heading>
-		<nav>
-			<ul className="plain-list">
-				<li>
-					<NextLink href="/" passHref>
-						<Link>Home</Link>
-					</NextLink>
-				</li>
-				<li>
-					<NextLink href="/docs" passHref>
-						<Link>Docs</Link>
-					</NextLink>
-				</li>
-				<li>
-					<NextLink href="/faq" passHref>
-						<Link>FAQ</Link>
-					</NextLink>
-				</li>
-				<li>
-					<Link
-						href="https://github.com/mike-engel/styled-typography"
-						target="_blank"
-					>
-						GitHub ➚
-					</Link>
-				</li>
-			</ul>
-		</nav>
-		<ThemeSwitcher />
-	</header>
-);
+const getPath = (router: WithRouterProps["router"]) =>
+	!!router ? router.asPath : "";
 
-export const Header = styled(RawHeader)`
+export const RawHeader = ({ className, router }: Props) => {
+	const currentPath = getPath(router);
+
+	console.log({ currentPath });
+
+	return (
+		<header className={className}>
+			<Heading displayLevel={3} fontWeight={FontWeight.Medium}>
+				Styled Typography
+			</Heading>
+			<nav>
+				<ul className="plain-list">
+					<li>
+						<NextLink href="/" passHref>
+							<Link data-active={currentPath === "/"}>Home</Link>
+						</NextLink>
+					</li>
+					<li>
+						<NextLink href="/docs" passHref>
+							<Link data-active={currentPath === "/docs"}>Docs</Link>
+						</NextLink>
+					</li>
+					<li>
+						<NextLink href="/faq" passHref>
+							<Link data-active={currentPath === "/faq"}>FAQ</Link>
+						</NextLink>
+					</li>
+					<li>
+						<Link
+							href="https://github.com/mike-engel/styled-typography"
+							target="_blank"
+						>
+							GitHub ➚
+						</Link>
+					</li>
+				</ul>
+			</nav>
+			<ThemeSwitcher />
+		</header>
+	);
+};
+
+export const Header = styled(withRouter(RawHeader))`
 	padding: ${spacing(1)}px ${spacing(3)}px;
 	display: flex;
 	flex-direction: column;
@@ -62,6 +72,17 @@ export const Header = styled(RawHeader)`
 
 	li + li {
 		margin-left: ${spacing(3)}px;
+	}
+
+	[data-active="true"] {
+		text-decoration: line-through;
+	}
+
+	@media (hover) {
+		${Link}:hover {
+			text-decoration-line: underline;
+			text-decoration-style: wavy;
+		}
 	}
 
 	@media (min-width: ${Breakpoints.Tablet}px) {
