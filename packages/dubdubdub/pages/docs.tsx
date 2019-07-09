@@ -10,26 +10,26 @@ import {
 } from "styled-typography";
 import NextLink from "next/link";
 import { Stylable } from "../types/component.types";
-import { spacing } from "../utils/spacing.util";
 import { Code } from "../components/atoms/code.component";
 import { Callout } from "../components/atoms/callout.component";
+import { BookmarkHeading } from "../components/atoms/bookmark_heading.component";
 
 type Props = Stylable;
 
 export const RawIndex = ({ className }: Props) => (
 	<section className={className}>
 		<Heading>Docs</Heading>
-		<Heading id="installation" level={2}>
+		<BookmarkHeading id="installation" level={2}>
 			Installation
-		</Heading>
+		</BookmarkHeading>
 		<Text>
 			To download <Span fontWeight={FontWeight.Bold}>styled-typography</Span>{" "}
 			run the following from within your project:
 		</Text>
 		<Code language="shell">{`npm install styled-typography`}</Code>
-		<Heading id="configuring-the-theme" level={2}>
+		<BookmarkHeading id="configuring-the-theme" level={2}>
 			Configuring the theme
-		</Heading>
+		</BookmarkHeading>
 		<Text>
 			You can customize{" "}
 			<Span fontWeight={FontWeight.Bold}>styled-typography</Span> as much or as
@@ -69,17 +69,17 @@ export const App = ({ children }) => (
 		{children}
 	</ThemeProvider>
 );`}</Code>
-		<Heading id="components" level={2}>
+		<BookmarkHeading id="components" level={2}>
 			Components
-		</Heading>
+		</BookmarkHeading>
 		<Text>
 			<code>styled-typography</code> provides give components for you to use and
 			extend if needed: <code>GlobalTypeStyles</code>, <code>Text</code>,{" "}
 			<code>Heading</code>, <code>Span</code>, and <code>Link</code>.
 		</Text>
-		<Heading id="global-type-styles" level={3}>
+		<BookmarkHeading id="global-type-styles" level={3}>
 			<code>GlobalTypeStyles</code>
-		</Heading>
+		</BookmarkHeading>
 		<Text>
 			The <code>GlobalStyleStyles</code> component is a way to quickly get
 			global type styles into your app. This is useful if you intent to use{" "}
@@ -98,9 +98,9 @@ export const App = ({ children }) => (
 		{children}
 	</ThemeProvider>
 );`}</Code>
-		<Heading id="text" level={3}>
+		<BookmarkHeading id="text" level={3}>
 			<code>Text</code>
-		</Heading>
+		</BookmarkHeading>
 		<Text>
 			The <code>Text</code> component resolves, by default, to a <code>p</code>{" "}
 			component within the DOM. It accepts all props passable to <code>p</code>,
@@ -121,9 +121,9 @@ export const HelloWorld = ({ className }) => (
 		Hello, World!
 	</Text>
 );`}</Code>
-		<Heading id="heading" level={3}>
+		<BookmarkHeading id="heading" level={3}>
 			<code>Heading</code>
-		</Heading>
+		</BookmarkHeading>
 		<Text>
 			The <code>Heading</code> component resolves, by default, to a{" "}
 			<code>div</code> component within the DOM. It accepts all props passable
@@ -155,9 +155,9 @@ export const HelloWorld = ({ className }) => (
 		Hello, World!
 	</Heading>
 );`}</Code>
-		<Heading id="span" level={3}>
+		<BookmarkHeading id="span" level={3}>
 			<code>Span</code>
-		</Heading>
+		</BookmarkHeading>
 		<Text>
 			The <code>Span</code> component resolves, by default, to a{" "}
 			<code>span</code> component within the DOM. It accepts all props passable
@@ -178,9 +178,9 @@ export const HelloWorld = ({ className }) => (
 		Hello, World!
 	</Span>
 );`}</Code>
-		<Heading id="link" level={3}>
+		<BookmarkHeading id="link" level={3}>
 			<code>Link</code>
-		</Heading>
+		</BookmarkHeading>
 		<Text>
 			The <code>Link</code> component resolves, by default, to an <code>a</code>{" "}
 			component within the DOM. It accepts all props passable to <code>a</code>,
@@ -203,16 +203,16 @@ export const HelloWorld = ({ className }) => (
 		Hello, World!
 	</Link>
 );`}</Code>
-		<Heading id="options" level={2}>
+		<BookmarkHeading id="options" level={2}>
 			Configuration options
-		</Heading>
+		</BookmarkHeading>
 		<Text>
 			Each of these options has what I consider to be a good default. You may
 			override all of them, choose just a few to change, or do nothing.
 		</Text>
-		<Heading id="fontsizes" level={3}>
+		<BookmarkHeading id="fontsizes" level={3}>
 			<code>fontSizes</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> [string, string, string,
@@ -241,9 +241,9 @@ export const HelloWorld = ({ className }) => (
 			</Link>
 			!
 		</Text>
-		<Heading id="bodyfontfamily" level={3}>
+		<BookmarkHeading id="bodyfontfamily" level={3}>
 			<code>bodyFontFamily</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> string
@@ -263,9 +263,9 @@ export const HelloWorld = ({ className }) => (
 			styles unless used within a <code>Text</code> or <code>Heading</code>{" "}
 			element.
 		</Text>
-		<Heading id="bodySize" level={3}>
+		<BookmarkHeading id="bodySize" level={3}>
 			<code>bodySize</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> number
@@ -282,9 +282,9 @@ export const HelloWorld = ({ className }) => (
 			inherit the global styles unless used within a <code>Text</code> or{" "}
 			<code>Heading</code> element.
 		</Text>
-		<Heading id="bodyweight" level={3}>
+		<BookmarkHeading id="bodyweight" level={3}>
 			<code>bodyWeight</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> FontWeight
@@ -345,9 +345,9 @@ export const HelloWorld = ({ className }) => (
 				</li>
 			</ul>
 		</Callout>
-		<Heading id="bodystyle" level={3}>
+		<BookmarkHeading id="bodystyle" level={3}>
 			<code>bodyStyle</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> FontStyle
@@ -390,9 +390,9 @@ export const HelloWorld = ({ className }) => (
 				</li>
 			</ul>
 		</Callout>
-		<Heading id="bodycolor" level={3}>
+		<BookmarkHeading id="bodycolor" level={3}>
 			<code>bodyColor</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> string
@@ -409,9 +409,9 @@ export const HelloWorld = ({ className }) => (
 			inherit the global styles unless used within a <code>Text</code> or{" "}
 			<code>Heading</code> element.
 		</Text>
-		<Heading id="bodylineheight" level={3}>
+		<BookmarkHeading id="bodylineheight" level={3}>
 			<code>bodyLineHeight</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> string | number
@@ -428,9 +428,9 @@ export const HelloWorld = ({ className }) => (
 			inherit the global styles unless used within a <code>Text</code> or{" "}
 			<code>Heading</code> element.
 		</Text>
-		<Heading id="headingfontfamily" level={3}>
+		<BookmarkHeading id="headingfontfamily" level={3}>
 			<code>headingFontFamily</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> string
@@ -450,9 +450,9 @@ export const HelloWorld = ({ className }) => (
 			will inherit the global styles unless used within a <code>Text</code> or{" "}
 			<code>Heading</code> element.
 		</Text>
-		<Heading id="headingSize" level={3}>
+		<BookmarkHeading id="headingSize" level={3}>
 			<code>headingSize</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> number
@@ -469,9 +469,9 @@ export const HelloWorld = ({ className }) => (
 			will inherit the global styles unless used within a <code>Text</code> or{" "}
 			<code>Heading</code> element.
 		</Text>
-		<Heading id="headingweight" level={3}>
+		<BookmarkHeading id="headingweight" level={3}>
 			<code>headingWeight</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> FontWeight
@@ -532,9 +532,9 @@ export const HelloWorld = ({ className }) => (
 				</li>
 			</ul>
 		</Callout>
-		<Heading id="headingstyle" level={3}>
+		<BookmarkHeading id="headingstyle" level={3}>
 			<code>headingStyle</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> FontStyle
@@ -577,9 +577,9 @@ export const HelloWorld = ({ className }) => (
 				</li>
 			</ul>
 		</Callout>
-		<Heading id="headingcolor" level={3}>
+		<BookmarkHeading id="headingcolor" level={3}>
 			<code>headingColor</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> string
@@ -596,9 +596,9 @@ export const HelloWorld = ({ className }) => (
 			will inherit the global styles unless used within a <code>Text</code> or{" "}
 			<code>Heading</code> element.
 		</Text>
-		<Heading id="headinglineheight" level={3}>
+		<BookmarkHeading id="headinglineheight" level={3}>
 			<code>headingLineHeight</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span> string | number
@@ -615,9 +615,9 @@ export const HelloWorld = ({ className }) => (
 			will inherit the global styles unless used within a <code>Text</code> or{" "}
 			<code>Heading</code> element.
 		</Text>
-		<Heading id="extra" level={3}>
+		<BookmarkHeading id="extra" level={3}>
 			<code>extra</code>
-		</Heading>
+		</BookmarkHeading>
 		<Callout>
 			<code>
 				<Span fontWeight={FontWeight.Bold}>Type:</Span>{" "}
