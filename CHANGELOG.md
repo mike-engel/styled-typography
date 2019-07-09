@@ -1,5 +1,9 @@
 # Unreleased
 
+# 1.0.0
+
+No new changes, just the first stable release.
+
 # 1.0.0-rc2
 
 ## New features
