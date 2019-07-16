@@ -1,5 +1,5 @@
 import React from "react";
-import App, { Container, NextAppContext, AppProps } from "next/app";
+import App, { Container, AppContext, AppProps } from "next/app";
 import styled, { createGlobalStyle } from "styled-components";
 import { GlobalTypeStyles, Heading } from "styled-typography";
 import cookie from "cookie";
@@ -69,7 +69,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export class RawApp extends App<Props> {
-	static async getInitialProps({ Component, ctx }: NextAppContext) {
+	static async getInitialProps({ Component, ctx }: AppContext) {
 		let pageProps = {};
 		const cookies = !!ctx.req && ctx.req.headers.cookie;
 		const themeCookie = cookie.parse(cookies || "");

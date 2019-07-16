@@ -1,14 +1,14 @@
 import React, { ReactElement } from "react";
 import Document from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { NextDocumentContext } from "next/document";
+import { DocumentContext } from "next/document";
 
 type Props = {
 	styleTags: ReactElement<any>;
 };
 
 export default class MyDocument extends Document<Props> {
-	static async getInitialProps(ctx: NextDocumentContext) {
+	static async getInitialProps(ctx: DocumentContext) {
 		const sheet = new ServerStyleSheet();
 		const originalRenderPage = ctx.renderPage;
 

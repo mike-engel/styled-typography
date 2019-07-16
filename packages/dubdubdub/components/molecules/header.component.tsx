@@ -2,17 +2,17 @@ import React from "react";
 import { Heading, Link, FontWeight } from "styled-typography";
 import styled from "styled-components";
 import NextLink from "next/link";
-import { WithRouterProps, withRouter } from "next/router";
+import { useRouter, NextRouter } from "next/router";
 import { Stylable } from "../../types/component.types";
 import { spacing, Breakpoints } from "../../utils/spacing.util";
 import { ThemeSwitcher } from "./theme_switcher.component";
 
-type Props = Stylable & WithRouterProps;
+type Props = Stylable;
 
-const getPath = (router: WithRouterProps["router"]) =>
-	!!router ? router.asPath : "";
+const getPath = (router: NextRouter) => (!!router ? router.asPath : "");
 
-export const RawHeader = ({ className, router }: Props) => {
+export const RawHeader = ({ className }: Props) => {
+	const router = useRouter();
 	const currentPath = getPath(router);
 
 	console.log({ currentPath });
@@ -54,7 +54,7 @@ export const RawHeader = ({ className, router }: Props) => {
 	);
 };
 
-export const Header = styled(withRouter(RawHeader))`
+export const Header = styled(RawHeader)`
 	padding: ${spacing(1)}px ${spacing(3)}px;
 	display: flex;
 	flex-direction: column;

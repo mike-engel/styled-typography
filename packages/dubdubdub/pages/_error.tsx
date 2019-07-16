@@ -1,5 +1,5 @@
 import React from "react";
-import { NextContext } from "next";
+import { NextPageContext } from "next";
 import NextLink from "next/link";
 import styled from "styled-components";
 import Head from "next/head";
@@ -49,7 +49,7 @@ export const RawError = ({ className, statusCode }: Props) => {
 	);
 };
 
-RawError.getInitialProps = ({ res, err }: NextContext) => {
+RawError.getInitialProps = async ({ res, err }: NextPageContext) => {
 	const statusCode = res
 		? res.statusCode
 		: err

@@ -24,24 +24,24 @@
   "dependencies": {
     "@types/react-syntax-highlighter": "^10.2.1",
     "cookie": "^0.4.0",
-    "next": "^8.1.0",
+    "next": "^9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-syntax-highlighter": "^10.3.0",
-    "styled-components": "^4.3.1",
+    "react-syntax-highlighter": "^11.0.2",
+    "styled-components": "^4.3.2",
     "styled-typography": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
     "@types/cookie": "^0.3.3",
-    "@types/next": "^8.0.5",
-    "@types/react": "^16.8.20",
+    "@types/next": "^8.0.6",
+    "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
-    "@types/styled-components": "^4.1.16",
+    "@types/styled-components": "^4.1.18",
     "@zeit/next-typescript": "^1.1.1",
     "babel-plugin-jsx-control-statements": "^4.0.0",
-    "babel-plugin-styled-components": "^1.10.1",
-    "typescript": "^3.5.2"
+    "babel-plugin-styled-components": "^1.10.6",
+    "typescript": "^3.5.3"
   }
 }
