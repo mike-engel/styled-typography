@@ -1,6 +1,6 @@
 import React, { ReactChild } from "react";
 import { Prism, SyntaxHighlighterProps } from "react-syntax-highlighter";
-import { tomorrow } from "react-syntax-highlighter/dist/styles/prism";
+import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 type Props = {
 	language?: SyntaxHighlighterProps["language"];
