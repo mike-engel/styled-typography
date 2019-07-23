@@ -1,5 +1,11 @@
 # Unreleased
 
+# 1.0.1
+
+## Bug fixes
+
+- Update dependencies to steer clear of security violations
+
 # 1.0.0
 
 No new changes, just the first stable release.
