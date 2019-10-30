@@ -45,7 +45,7 @@ export const App = ({ children }) => (
 
 ### Components
 
-`styled-typography` provides give components for you to use and extend if needed: `GlobalTypeStyles`, `Text`, `Heading`, `Span`, and `Link`.
+`styled-typography` provides components for you to use and extend if needed: `GlobalTypeStyles`, `Text`, `Heading`, `Span`, and `Link`.
 
 #### `GlobalTypeStyles`
 
