@@ -24,7 +24,7 @@
   "dependencies": {
     "@types/react-syntax-highlighter": "^10.2.1",
     "cookie": "^0.4.0",
-    "next": "^9.0.2",
+    "next": "^11.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-syntax-highlighter": "^11.0.2",
